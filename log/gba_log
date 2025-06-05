@@ -1,0 +1,754 @@
+------------ Options -------------
+config: ./config/GBA.conf
+cuda: 0
+seed: 1
+batch_size: 16
+max_epoch: 50
+learning_rate: 0.002
+weight_decay: 0.0001
+input_len: 12
+output_len: 12
+train_ratio: 0.6
+val_ratio: 0.2
+test_ratio: 0.2
+node_num: 2352
+tod: 96
+dow: 7
+layers: 5
+patch_num: 16
+input_dims: 128
+node_dims: 64
+tod_dims: 16
+dow_dims: 16
+traffic_file: ./data/GBA/flowgba.npz
+meta_file: ./data/GBA/gba_meta.csv
+model_file: ./cpt/gba_model
+log_file: ./log/gba_log
+-------------- End ----------------
+
+------------ Loading Data -------------
+Shape of data: (35040, 2352, 1)
+Shape of metas: (10, 2352)
+Shape of Train: (21001, 12, 2352, 1)
+Shape of Validation: (6985, 12, 2352, 1)
+Shape of Test: (6985, 12, 2352, 1)
+Mean: 238.5313055056713 & Std: 166.68980630348025
+------------ End -------------
+
+The number of parameters: 4199356.
+======================TRAIN MODE======================
+epoch 1, lr 0.002000, total_loss 51.1131, time 225.5 sec, prediction_loss 43.7035, balance_loss 7.4097
+step 1, mae: 17.4353, rmse: 27.6166, mape: 0.1471
+step 2, mae: 21.2729, rmse: 33.8999, mape: 0.1808
+step 3, mae: 24.8529, rmse: 38.5421, mape: 0.2426
+step 4, mae: 28.0648, rmse: 42.6769, mape: 0.2970
+step 5, mae: 29.9994, rmse: 46.6164, mape: 0.2840
+step 6, mae: 33.7892, rmse: 51.3383, mape: 0.3628
+step 7, mae: 35.8755, rmse: 54.6190, mape: 0.3815
+step 8, mae: 38.0180, rmse: 57.7435, mape: 0.4016
+step 9, mae: 41.2531, rmse: 61.6977, mape: 0.4736
+step 10, mae: 42.0750, rmse: 64.5631, mape: 0.4227
+step 11, mae: 44.5549, rmse: 67.6489, mape: 0.4737
+step 12, mae: 45.8059, rmse: 70.2793, mape: 0.4566
+average, mae: 33.5829, rmse: 53.1001, mape: 0.3437, val_time: 29.9958
+epoch 2, lr 0.001000, total_loss 35.6693, time 216.6 sec, prediction_loss 32.1365, balance_loss 3.5328
+step 1, mae: 16.5684, rmse: 26.7383, mape: 0.1182
+step 2, mae: 19.8246, rmse: 32.4654, mape: 0.1417
+step 3, mae: 22.9395, rmse: 36.9430, mape: 0.1692
+step 4, mae: 25.9445, rmse: 40.8557, mape: 0.2054
+step 5, mae: 28.6004, rmse: 44.4904, mape: 0.2396
+step 6, mae: 30.7104, rmse: 47.7751, mape: 0.2573
+step 7, mae: 33.0414, rmse: 50.9955, mape: 0.2859
+step 8, mae: 35.2221, rmse: 54.1546, mape: 0.3099
+step 9, mae: 37.5020, rmse: 57.4043, mape: 0.3243
+step 10, mae: 39.4417, rmse: 60.2734, mape: 0.3467
+step 11, mae: 41.4504, rmse: 63.1019, mape: 0.3641
+step 12, mae: 43.1773, rmse: 65.6043, mape: 0.3820
+average, mae: 31.2019, rmse: 49.8429, mape: 0.2620, val_time: 29.1892
+epoch 3, lr 0.001000, total_loss 33.6282, time 215.5 sec, prediction_loss 30.7116, balance_loss 2.9166
+step 1, mae: 15.9974, rmse: 26.3752, mape: 0.1165
+step 2, mae: 19.1987, rmse: 31.8644, mape: 0.1438
+step 3, mae: 21.8963, rmse: 35.8584, mape: 0.1709
+step 4, mae: 24.3574, rmse: 39.2090, mape: 0.2037
+step 5, mae: 26.7112, rmse: 42.4024, mape: 0.2336
+step 6, mae: 28.8932, rmse: 45.4730, mape: 0.2570
+step 7, mae: 30.9001, rmse: 48.2398, mape: 0.2833
+step 8, mae: 33.6121, rmse: 51.2851, mape: 0.3586
+step 9, mae: 35.4203, rmse: 54.0790, mape: 0.3661
+step 10, mae: 36.8517, rmse: 56.5551, mape: 0.3657
+step 11, mae: 38.9428, rmse: 59.2581, mape: 0.4078
+step 12, mae: 40.7068, rmse: 61.5979, mape: 0.4388
+average, mae: 29.4573, rmse: 47.2457, mape: 0.2788, val_time: 29.4683
+epoch 4, lr 0.001000, total_loss 33.4925, time 217.6 sec, prediction_loss 29.7668, balance_loss 3.7257
+step 1, mae: 15.9317, rmse: 26.1295, mape: 0.1098
+step 2, mae: 19.3889, rmse: 31.8095, mape: 0.1392
+step 3, mae: 22.3492, rmse: 35.9277, mape: 0.1718
+step 4, mae: 24.1995, rmse: 38.7903, mape: 0.1990
+step 5, mae: 26.4452, rmse: 42.0329, mape: 0.2215
+step 6, mae: 28.6104, rmse: 45.1271, mape: 0.2417
+step 7, mae: 30.5468, rmse: 47.7268, mape: 0.2720
+step 8, mae: 32.1092, rmse: 50.1489, mape: 0.2869
+step 9, mae: 34.0896, rmse: 53.0747, mape: 0.3019
+step 10, mae: 35.7838, rmse: 55.5694, mape: 0.3266
+step 11, mae: 37.5616, rmse: 58.0687, mape: 0.3452
+step 12, mae: 38.9165, rmse: 60.2786, mape: 0.3571
+average, mae: 28.8276, rmse: 46.5442, mape: 0.2477, val_time: 30.6966
+epoch 5, lr 0.001000, total_loss 33.6134, time 219.5 sec, prediction_loss 28.8333, balance_loss 4.7802
+step 1, mae: 15.7449, rmse: 25.9075, mape: 0.1115
+step 2, mae: 19.2268, rmse: 31.5159, mape: 0.1504
+step 3, mae: 22.1676, rmse: 35.5650, mape: 0.1860
+step 4, mae: 24.7746, rmse: 38.9982, mape: 0.2106
+step 5, mae: 26.3576, rmse: 41.6206, mape: 0.2184
+step 6, mae: 29.0732, rmse: 44.9509, mape: 0.2609
+step 7, mae: 30.7926, rmse: 47.4654, mape: 0.2787
+step 8, mae: 32.3828, rmse: 49.7909, mape: 0.2919
+step 9, mae: 33.5330, rmse: 51.8595, mape: 0.2999
+step 10, mae: 35.1497, rmse: 54.3022, mape: 0.3158
+step 11, mae: 36.4154, rmse: 56.3457, mape: 0.3324
+step 12, mae: 37.8730, rmse: 58.5470, mape: 0.3468
+average, mae: 28.6241, rmse: 45.8037, mape: 0.2503, val_time: 30.1068
+epoch 6, lr 0.001000, total_loss 34.4726, time 222.9 sec, prediction_loss 28.0907, balance_loss 6.3819
+step 1, mae: 15.4615, rmse: 25.5533, mape: 0.1171
+step 2, mae: 18.4518, rmse: 30.7135, mape: 0.1451
+step 3, mae: 20.7119, rmse: 34.1836, mape: 0.1676
+step 4, mae: 22.7031, rmse: 37.1172, mape: 0.1869
+step 5, mae: 24.7295, rmse: 39.9806, mape: 0.2045
+step 6, mae: 26.5796, rmse: 42.6362, mape: 0.2266
+step 7, mae: 28.2485, rmse: 45.0368, mape: 0.2476
+step 8, mae: 29.8320, rmse: 47.3609, mape: 0.2656
+step 9, mae: 31.4812, rmse: 49.8051, mape: 0.2827
+step 10, mae: 32.9251, rmse: 52.0080, mape: 0.3028
+step 11, mae: 34.3491, rmse: 54.1104, mape: 0.3251
+step 12, mae: 35.7672, rmse: 56.1847, mape: 0.3404
+average, mae: 26.7700, rmse: 43.8750, mape: 0.2343, val_time: 31.5006
+epoch 7, lr 0.001000, total_loss 37.6748, time 231.7 sec, prediction_loss 27.5794, balance_loss 10.0954
+step 1, mae: 15.3100, rmse: 25.3703, mape: 0.1080
+step 2, mae: 18.3237, rmse: 30.5436, mape: 0.1338
+step 3, mae: 20.7683, rmse: 34.1478, mape: 0.1588
+step 4, mae: 23.0678, rmse: 37.3725, mape: 0.1867
+step 5, mae: 24.9675, rmse: 40.2861, mape: 0.2045
+step 6, mae: 26.8544, rmse: 43.0670, mape: 0.2285
+step 7, mae: 28.7285, rmse: 45.7403, mape: 0.2469
+step 8, mae: 30.3662, rmse: 48.1318, mape: 0.2622
+step 9, mae: 32.0228, rmse: 50.4166, mape: 0.2793
+step 10, mae: 33.2364, rmse: 52.6105, mape: 0.2924
+step 11, mae: 34.6309, rmse: 54.7552, mape: 0.3073
+step 12, mae: 36.0384, rmse: 56.9136, mape: 0.3221
+average, mae: 27.0260, rmse: 44.3216, mape: 0.2275, val_time: 32.5532
+epoch 8, lr 0.001000, total_loss 42.3692, time 245.5 sec, prediction_loss 26.9273, balance_loss 15.4419
+step 1, mae: 15.3920, rmse: 25.2865, mape: 0.1105
+step 2, mae: 18.2431, rmse: 30.1610, mape: 0.1376
+step 3, mae: 20.4329, rmse: 33.4555, mape: 0.1598
+step 4, mae: 22.3808, rmse: 36.1158, mape: 0.1857
+step 5, mae: 24.0919, rmse: 38.5700, mape: 0.2101
+step 6, mae: 25.8224, rmse: 40.9609, mape: 0.2324
+step 7, mae: 27.2363, rmse: 43.0341, mape: 0.2485
+step 8, mae: 28.8061, rmse: 45.1854, mape: 0.2689
+step 9, mae: 30.1877, rmse: 47.3444, mape: 0.2840
+step 10, mae: 31.5898, rmse: 49.4335, mape: 0.2997
+step 11, mae: 32.7631, rmse: 51.2968, mape: 0.3141
+step 12, mae: 33.9367, rmse: 53.2646, mape: 0.3261
+average, mae: 25.9068, rmse: 42.0172, mape: 0.2314, val_time: 36.1223
+epoch 9, lr 0.001000, total_loss 41.3538, time 250.7 sec, prediction_loss 25.5359, balance_loss 15.8179
+step 1, mae: 14.9655, rmse: 24.9300, mape: 0.1077
+step 2, mae: 17.6496, rmse: 29.4643, mape: 0.1356
+step 3, mae: 19.5447, rmse: 32.2422, mape: 0.1597
+step 4, mae: 21.1858, rmse: 34.5348, mape: 0.1803
+step 5, mae: 22.6900, rmse: 36.6444, mape: 0.2011
+step 6, mae: 24.0983, rmse: 38.6422, mape: 0.2190
+step 7, mae: 25.4191, rmse: 40.4131, mape: 0.2460
+step 8, mae: 26.5718, rmse: 42.0987, mape: 0.2637
+step 9, mae: 27.7507, rmse: 43.7948, mape: 0.2874
+step 10, mae: 28.8343, rmse: 45.6351, mape: 0.2965
+step 11, mae: 29.8007, rmse: 47.3363, mape: 0.3103
+step 12, mae: 30.8498, rmse: 48.9715, mape: 0.3295
+average, mae: 24.1132, rmse: 39.3730, mape: 0.2281, val_time: 32.2173
+epoch 10, lr 0.001000, total_loss 38.0684, time 243.6 sec, prediction_loss 24.4114, balance_loss 13.6570
+step 1, mae: 15.0108, rmse: 24.8991, mape: 0.1111
+step 2, mae: 17.4712, rmse: 29.1701, mape: 0.1392
+step 3, mae: 19.5981, rmse: 31.8532, mape: 0.1898
+step 4, mae: 20.8846, rmse: 33.9703, mape: 0.1924
+step 5, mae: 22.3760, rmse: 36.0680, mape: 0.2124
+step 6, mae: 23.7979, rmse: 38.0814, mape: 0.2229
+step 7, mae: 24.9174, rmse: 39.6758, mape: 0.2432
+step 8, mae: 25.9506, rmse: 41.0791, mape: 0.2547
+step 9, mae: 27.0521, rmse: 42.7260, mape: 0.2694
+step 10, mae: 28.0110, rmse: 44.1403, mape: 0.2839
+step 11, mae: 29.1784, rmse: 45.7619, mape: 0.2953
+step 12, mae: 30.3067, rmse: 47.4139, mape: 0.3077
+average, mae: 23.7127, rmse: 38.4797, mape: 0.2268, val_time: 31.1763
+epoch 11, lr 0.001000, total_loss 37.0545, time 243.9 sec, prediction_loss 23.7091, balance_loss 13.3454
+step 1, mae: 15.5331, rmse: 25.0985, mape: 0.1344
+step 2, mae: 17.8916, rmse: 29.3024, mape: 0.1553
+step 3, mae: 19.8876, rmse: 32.0980, mape: 0.1850
+step 4, mae: 21.6250, rmse: 34.3309, mape: 0.2113
+step 5, mae: 22.6296, rmse: 36.0711, mape: 0.2178
+step 6, mae: 23.9983, rmse: 37.9916, mape: 0.2364
+step 7, mae: 24.9546, rmse: 39.3190, mape: 0.2470
+step 8, mae: 25.8513, rmse: 40.7624, mape: 0.2552
+step 9, mae: 26.6588, rmse: 42.1881, mape: 0.2655
+step 10, mae: 27.6921, rmse: 43.7445, mape: 0.2776
+step 11, mae: 28.6693, rmse: 45.1199, mape: 0.2898
+step 12, mae: 29.5503, rmse: 46.6317, mape: 0.3017
+average, mae: 23.7449, rmse: 38.2461, mape: 0.2314, val_time: 34.9303
+epoch 12, lr 0.001000, total_loss 38.7599, time 253.0 sec, prediction_loss 23.2326, balance_loss 15.5273
+step 1, mae: 14.8649, rmse: 24.7397, mape: 0.1078
+step 2, mae: 17.5299, rmse: 29.0208, mape: 0.1425
+step 3, mae: 19.1645, rmse: 31.6477, mape: 0.1581
+step 4, mae: 20.7025, rmse: 33.7892, mape: 0.1784
+step 5, mae: 21.9353, rmse: 35.4746, mape: 0.1949
+step 6, mae: 22.8649, rmse: 36.8105, mape: 0.2086
+step 7, mae: 23.6502, rmse: 37.9716, mape: 0.2256
+step 8, mae: 24.6286, rmse: 39.3184, mape: 0.2365
+step 9, mae: 25.5156, rmse: 40.6072, mape: 0.2505
+step 10, mae: 26.4437, rmse: 41.9651, mape: 0.2608
+step 11, mae: 27.0190, rmse: 42.9098, mape: 0.2728
+step 12, mae: 27.8103, rmse: 44.0293, mape: 0.2864
+average, mae: 22.6773, rmse: 36.9556, mape: 0.2102, val_time: 33.2153
+epoch 13, lr 0.001000, total_loss 36.1184, time 247.0 sec, prediction_loss 22.6320, balance_loss 13.4864
+step 1, mae: 14.5989, rmse: 24.4001, mape: 0.1073
+step 2, mae: 17.2160, rmse: 28.7469, mape: 0.1341
+step 3, mae: 18.8383, rmse: 31.3438, mape: 0.1549
+step 4, mae: 20.0518, rmse: 33.2054, mape: 0.1724
+step 5, mae: 21.1774, rmse: 34.8177, mape: 0.1889
+step 6, mae: 22.2817, rmse: 36.2731, mape: 0.2043
+step 7, mae: 23.1025, rmse: 37.4855, mape: 0.2183
+step 8, mae: 23.8639, rmse: 38.5768, mape: 0.2344
+step 9, mae: 24.5835, rmse: 39.5930, mape: 0.2503
+step 10, mae: 25.3099, rmse: 40.6516, mape: 0.2645
+step 11, mae: 26.0985, rmse: 41.8632, mape: 0.2705
+step 12, mae: 26.8356, rmse: 42.8320, mape: 0.2784
+average, mae: 21.9964, rmse: 36.2116, mape: 0.2065, val_time: 31.8852
+epoch 14, lr 0.001000, total_loss 34.6412, time 241.8 sec, prediction_loss 21.9932, balance_loss 12.6480
+step 1, mae: 14.5804, rmse: 24.4742, mape: 0.1065
+step 2, mae: 16.8417, rmse: 28.4409, mape: 0.1293
+step 3, mae: 18.3827, rmse: 30.8138, mape: 0.1462
+step 4, mae: 19.6657, rmse: 32.6364, mape: 0.1664
+step 5, mae: 20.6946, rmse: 34.0749, mape: 0.1810
+step 6, mae: 21.7630, rmse: 35.4638, mape: 0.1964
+step 7, mae: 22.6001, rmse: 36.6091, mape: 0.2079
+step 8, mae: 23.4839, rmse: 37.8352, mape: 0.2213
+step 9, mae: 24.1316, rmse: 38.7970, mape: 0.2311
+step 10, mae: 24.9526, rmse: 39.8475, mape: 0.2433
+step 11, mae: 25.4143, rmse: 40.5372, mape: 0.2515
+step 12, mae: 26.1985, rmse: 41.6108, mape: 0.2621
+average, mae: 21.5589, rmse: 35.4503, mape: 0.1953, val_time: 31.7957
+epoch 15, lr 0.001000, total_loss 32.8351, time 237.3 sec, prediction_loss 21.5436, balance_loss 11.2915
+step 1, mae: 14.7166, rmse: 24.4064, mape: 0.1176
+step 2, mae: 16.9503, rmse: 28.3492, mape: 0.1440
+step 3, mae: 18.4841, rmse: 30.8011, mape: 0.1583
+step 4, mae: 19.4934, rmse: 32.3568, mape: 0.1712
+step 5, mae: 20.5243, rmse: 33.7206, mape: 0.1879
+step 6, mae: 21.2960, rmse: 34.7956, mape: 0.2009
+step 7, mae: 22.0314, rmse: 35.7507, mape: 0.2154
+step 8, mae: 22.7647, rmse: 36.6165, mape: 0.2290
+step 9, mae: 23.3528, rmse: 37.6178, mape: 0.2314
+step 10, mae: 23.9811, rmse: 38.4320, mape: 0.2473
+step 11, mae: 24.6456, rmse: 39.2652, mape: 0.2668
+step 12, mae: 25.2366, rmse: 40.2205, mape: 0.2663
+average, mae: 21.1229, rmse: 34.6569, mape: 0.2030, val_time: 33.2686
+epoch 16, lr 0.001000, total_loss 31.9832, time 235.7 sec, prediction_loss 21.0173, balance_loss 10.9659
+step 1, mae: 14.6553, rmse: 24.1733, mape: 0.1141
+step 2, mae: 16.8966, rmse: 28.0138, mape: 0.1412
+step 3, mae: 18.1126, rmse: 30.1226, mape: 0.1563
+step 4, mae: 19.1357, rmse: 31.7060, mape: 0.1735
+step 5, mae: 20.2505, rmse: 33.2604, mape: 0.1877
+step 6, mae: 21.0914, rmse: 34.5017, mape: 0.2011
+step 7, mae: 22.0821, rmse: 35.7191, mape: 0.2199
+step 8, mae: 22.6185, rmse: 36.5628, mape: 0.2253
+step 9, mae: 23.0866, rmse: 37.4427, mape: 0.2268
+step 10, mae: 23.6205, rmse: 38.2162, mape: 0.2331
+step 11, mae: 24.1946, rmse: 39.0571, mape: 0.2408
+step 12, mae: 24.9638, rmse: 40.1066, mape: 0.2497
+average, mae: 20.8922, rmse: 34.3844, mape: 0.1975, val_time: 31.7980
+epoch 17, lr 0.001000, total_loss 31.8256, time 237.1 sec, prediction_loss 20.7027, balance_loss 11.1229
+step 1, mae: 14.5058, rmse: 24.1668, mape: 0.1049
+step 2, mae: 16.6121, rmse: 27.8812, mape: 0.1283
+step 3, mae: 17.8196, rmse: 29.9016, mape: 0.1440
+step 4, mae: 18.8912, rmse: 31.4443, mape: 0.1590
+step 5, mae: 19.6831, rmse: 32.7105, mape: 0.1719
+step 6, mae: 20.4855, rmse: 33.8871, mape: 0.1846
+step 7, mae: 21.0971, rmse: 34.7822, mape: 0.1965
+step 8, mae: 21.5879, rmse: 35.5170, mape: 0.2072
+step 9, mae: 22.0958, rmse: 36.2999, mape: 0.2148
+step 10, mae: 22.5798, rmse: 36.9576, mape: 0.2223
+step 11, mae: 23.1700, rmse: 37.6820, mape: 0.2298
+step 12, mae: 23.9090, rmse: 38.4960, mape: 0.2429
+average, mae: 20.2030, rmse: 33.5649, mape: 0.1839, val_time: 31.0208
+epoch 18, lr 0.001000, total_loss 31.7355, time 237.7 sec, prediction_loss 20.2955, balance_loss 11.4400
+step 1, mae: 14.5164, rmse: 24.2501, mape: 0.1088
+step 2, mae: 16.6237, rmse: 28.1083, mape: 0.1323
+step 3, mae: 17.9216, rmse: 30.2824, mape: 0.1484
+step 4, mae: 18.8991, rmse: 31.7937, mape: 0.1668
+step 5, mae: 20.0117, rmse: 33.4755, mape: 0.1808
+step 6, mae: 20.7570, rmse: 34.6015, mape: 0.1917
+step 7, mae: 21.7237, rmse: 35.9529, mape: 0.2058
+step 8, mae: 22.3596, rmse: 36.6414, mape: 0.2197
+step 9, mae: 22.7312, rmse: 37.4111, mape: 0.2213
+step 10, mae: 23.1889, rmse: 38.0867, mape: 0.2275
+step 11, mae: 23.7581, rmse: 38.7962, mape: 0.2338
+step 12, mae: 24.1061, rmse: 39.2508, mape: 0.2386
+average, mae: 20.5496, rmse: 34.3451, mape: 0.1896, val_time: 31.7985
+epoch 19, lr 0.001000, total_loss 30.2809, time 234.8 sec, prediction_loss 20.0144, balance_loss 10.2666
+step 1, mae: 14.4126, rmse: 23.9772, mape: 0.1121
+step 2, mae: 16.3590, rmse: 27.5495, mape: 0.1334
+step 3, mae: 17.4046, rmse: 29.4498, mape: 0.1448
+step 4, mae: 18.3535, rmse: 30.8905, mape: 0.1594
+step 5, mae: 19.2199, rmse: 32.2063, mape: 0.1702
+step 6, mae: 19.9339, rmse: 33.2729, mape: 0.1831
+step 7, mae: 20.5690, rmse: 34.2120, mape: 0.1931
+step 8, mae: 21.1814, rmse: 35.0458, mape: 0.2024
+step 9, mae: 21.6415, rmse: 35.7856, mape: 0.2096
+step 10, mae: 21.9754, rmse: 36.4890, mape: 0.2158
+step 11, mae: 22.4242, rmse: 37.0858, mape: 0.2226
+step 12, mae: 22.9497, rmse: 37.6304, mape: 0.2295
+average, mae: 19.7020, rmse: 33.0427, mape: 0.1813, val_time: 30.4752
+epoch 20, lr 0.001000, total_loss 30.1953, time 233.8 sec, prediction_loss 19.7989, balance_loss 10.3964
+step 1, mae: 14.2365, rmse: 23.8967, mape: 0.1107
+step 2, mae: 16.0888, rmse: 27.4477, mape: 0.1306
+step 3, mae: 17.3375, rmse: 29.5806, mape: 0.1399
+step 4, mae: 18.1624, rmse: 30.7426, mape: 0.1631
+step 5, mae: 18.9483, rmse: 31.9062, mape: 0.1760
+step 6, mae: 19.4892, rmse: 32.9411, mape: 0.1801
+step 7, mae: 20.1640, rmse: 33.8710, mape: 0.1867
+step 8, mae: 20.5920, rmse: 34.5508, mape: 0.1909
+step 9, mae: 21.2065, rmse: 35.4022, mape: 0.1971
+step 10, mae: 21.7861, rmse: 36.2690, mape: 0.2044
+step 11, mae: 22.2004, rmse: 36.9469, mape: 0.2114
+step 12, mae: 22.6819, rmse: 37.6191, mape: 0.2200
+average, mae: 19.4077, rmse: 32.8350, mape: 0.1759, val_time: 29.4412
+epoch 21, lr 0.001000, total_loss 29.2098, time 232.2 sec, prediction_loss 19.5222, balance_loss 9.6875
+step 1, mae: 14.1302, rmse: 23.9353, mape: 0.1071
+step 2, mae: 16.1688, rmse: 27.5031, mape: 0.1349
+step 3, mae: 17.4639, rmse: 29.5145, mape: 0.1579
+step 4, mae: 18.2950, rmse: 30.8813, mape: 0.1677
+step 5, mae: 19.0930, rmse: 32.2668, mape: 0.1715
+step 6, mae: 19.9157, rmse: 33.3911, mape: 0.1875
+step 7, mae: 20.5145, rmse: 34.3075, mape: 0.1860
+step 8, mae: 20.8909, rmse: 34.7993, mape: 0.2031
+step 9, mae: 21.5362, rmse: 35.6143, mape: 0.2180
+step 10, mae: 21.9760, rmse: 36.2477, mape: 0.2256
+step 11, mae: 22.4204, rmse: 37.0245, mape: 0.2273
+step 12, mae: 22.8710, rmse: 37.6227, mape: 0.2335
+average, mae: 19.6062, rmse: 32.9983, mape: 0.1850, val_time: 30.2367
+epoch 22, lr 0.001000, total_loss 28.5850, time 231.6 sec, prediction_loss 19.3485, balance_loss 9.2365
+step 1, mae: 14.2478, rmse: 23.9332, mape: 0.1031
+step 2, mae: 16.0642, rmse: 27.4252, mape: 0.1214
+step 3, mae: 17.3244, rmse: 29.4144, mape: 0.1375
+step 4, mae: 18.1911, rmse: 30.7997, mape: 0.1522
+step 5, mae: 19.2631, rmse: 32.2327, mape: 0.1671
+step 6, mae: 19.9887, rmse: 33.3011, mape: 0.1805
+step 7, mae: 20.2931, rmse: 33.9538, mape: 0.1834
+step 8, mae: 20.8419, rmse: 34.6725, mape: 0.1943
+step 9, mae: 21.6301, rmse: 35.8148, mape: 0.2045
+step 10, mae: 22.0142, rmse: 36.3696, mape: 0.2118
+step 11, mae: 22.5518, rmse: 37.1836, mape: 0.2179
+step 12, mae: 23.0498, rmse: 37.8000, mape: 0.2255
+average, mae: 19.6215, rmse: 32.9880, mape: 0.1749, val_time: 29.9337
+epoch 23, lr 0.001000, total_loss 27.7334, time 229.6 sec, prediction_loss 19.2278, balance_loss 8.5055
+step 1, mae: 14.5327, rmse: 24.0621, mape: 0.1157
+step 2, mae: 16.4293, rmse: 27.6872, mape: 0.1395
+step 3, mae: 17.2215, rmse: 29.5553, mape: 0.1410
+step 4, mae: 18.2980, rmse: 31.0563, mape: 0.1613
+step 5, mae: 18.9102, rmse: 32.0561, mape: 0.1680
+step 6, mae: 19.3027, rmse: 32.6220, mape: 0.1730
+step 7, mae: 19.7431, rmse: 33.2385, mape: 0.1837
+step 8, mae: 20.3836, rmse: 34.3471, mape: 0.1916
+step 9, mae: 20.8643, rmse: 35.0238, mape: 0.2028
+step 10, mae: 21.4570, rmse: 36.0093, mape: 0.2073
+step 11, mae: 21.9897, rmse: 36.8408, mape: 0.2161
+step 12, mae: 22.8938, rmse: 38.1687, mape: 0.2241
+average, mae: 19.3354, rmse: 32.7837, mape: 0.1770, val_time: 30.3730
+epoch 24, lr 0.001000, total_loss 27.9849, time 231.4 sec, prediction_loss 19.0424, balance_loss 8.9425
+step 1, mae: 14.1618, rmse: 23.6895, mape: 0.1125
+step 2, mae: 16.1806, rmse: 27.1252, mape: 0.1441
+step 3, mae: 17.3917, rmse: 29.0499, mape: 0.1613
+step 4, mae: 18.1303, rmse: 30.3736, mape: 0.1683
+step 5, mae: 18.6838, rmse: 31.4629, mape: 0.1717
+step 6, mae: 19.4357, rmse: 32.4531, mape: 0.1922
+step 7, mae: 20.1986, rmse: 33.4511, mape: 0.2076
+step 8, mae: 20.5888, rmse: 34.3193, mape: 0.2087
+step 9, mae: 21.0654, rmse: 35.0770, mape: 0.2175
+step 10, mae: 21.3761, rmse: 35.8148, mape: 0.2162
+step 11, mae: 22.0445, rmse: 36.5953, mape: 0.2342
+step 12, mae: 22.4476, rmse: 37.3256, mape: 0.2325
+average, mae: 19.3087, rmse: 32.4664, mape: 0.1889, val_time: 30.4268
+epoch 25, lr 0.001000, total_loss 27.4581, time 230.1 sec, prediction_loss 18.9201, balance_loss 8.5380
+step 1, mae: 13.9893, rmse: 23.7734, mape: 0.1014
+step 2, mae: 15.9414, rmse: 27.2673, mape: 0.1231
+step 3, mae: 17.0858, rmse: 29.1627, mape: 0.1376
+step 4, mae: 18.0264, rmse: 30.6082, mape: 0.1504
+step 5, mae: 18.8942, rmse: 31.8888, mape: 0.1625
+step 6, mae: 19.5663, rmse: 32.9474, mape: 0.1709
+step 7, mae: 20.1085, rmse: 33.7649, mape: 0.1774
+step 8, mae: 20.6228, rmse: 34.5901, mape: 0.1849
+step 9, mae: 21.0744, rmse: 35.2873, mape: 0.1918
+step 10, mae: 21.5876, rmse: 35.9613, mape: 0.2007
+step 11, mae: 21.9942, rmse: 36.6333, mape: 0.2067
+step 12, mae: 22.5856, rmse: 37.3913, mape: 0.2158
+average, mae: 19.2895, rmse: 32.6770, mape: 0.1686, val_time: 31.5544
+epoch 26, lr 0.001000, total_loss 26.7974, time 228.4 sec, prediction_loss 18.7797, balance_loss 8.0176
+step 1, mae: 14.1095, rmse: 23.7488, mape: 0.1060
+step 2, mae: 15.9546, rmse: 27.2110, mape: 0.1254
+step 3, mae: 17.0648, rmse: 29.0312, mape: 0.1392
+step 4, mae: 17.7986, rmse: 30.2746, mape: 0.1501
+step 5, mae: 18.5589, rmse: 31.5106, mape: 0.1610
+step 6, mae: 19.3159, rmse: 32.7323, mape: 0.1697
+step 7, mae: 19.8894, rmse: 33.6177, mape: 0.1773
+step 8, mae: 20.3032, rmse: 34.2544, mape: 0.1838
+step 9, mae: 20.8085, rmse: 34.9698, mape: 0.1914
+step 10, mae: 21.1870, rmse: 35.4971, mape: 0.2006
+step 11, mae: 21.6603, rmse: 36.0542, mape: 0.2133
+step 12, mae: 22.3102, rmse: 36.9926, mape: 0.2132
+average, mae: 19.0800, rmse: 32.3817, mape: 0.1692, val_time: 31.5648
+epoch 27, lr 0.001000, total_loss 26.4726, time 228.1 sec, prediction_loss 18.6262, balance_loss 7.8464
+step 1, mae: 13.9644, rmse: 23.6495, mape: 0.0990
+step 2, mae: 15.8338, rmse: 27.1515, mape: 0.1184
+step 3, mae: 17.0448, rmse: 29.1460, mape: 0.1346
+step 4, mae: 17.7711, rmse: 30.3326, mape: 0.1449
+step 5, mae: 18.4534, rmse: 31.2982, mape: 0.1605
+step 6, mae: 19.1196, rmse: 32.3414, mape: 0.1693
+step 7, mae: 19.5108, rmse: 33.0583, mape: 0.1692
+step 8, mae: 19.9859, rmse: 33.7631, mape: 0.1759
+step 9, mae: 20.4272, rmse: 34.4806, mape: 0.1849
+step 10, mae: 20.8746, rmse: 35.1338, mape: 0.1900
+step 11, mae: 21.1495, rmse: 35.5545, mape: 0.1965
+step 12, mae: 21.6708, rmse: 36.2031, mape: 0.2087
+average, mae: 18.8171, rmse: 32.0448, mape: 0.1627, val_time: 32.1483
+epoch 28, lr 0.001000, total_loss 26.7818, time 229.1 sec, prediction_loss 18.5603, balance_loss 8.2215
+step 1, mae: 13.9136, rmse: 23.6297, mape: 0.0992
+step 2, mae: 15.6807, rmse: 26.9709, mape: 0.1176
+step 3, mae: 16.8023, rmse: 28.8678, mape: 0.1314
+step 4, mae: 17.5806, rmse: 30.1296, mape: 0.1419
+step 5, mae: 18.2311, rmse: 31.2782, mape: 0.1491
+step 6, mae: 18.9030, rmse: 32.2889, mape: 0.1589
+step 7, mae: 19.3817, rmse: 32.9784, mape: 0.1671
+step 8, mae: 19.7264, rmse: 33.6407, mape: 0.1746
+step 9, mae: 20.1559, rmse: 34.2513, mape: 0.1827
+step 10, mae: 20.5356, rmse: 34.8572, mape: 0.1839
+step 11, mae: 21.0170, rmse: 35.5246, mape: 0.1907
+step 12, mae: 21.4361, rmse: 36.0799, mape: 0.1989
+average, mae: 18.6135, rmse: 31.9100, mape: 0.1580, val_time: 30.5412
+epoch 29, lr 0.001000, total_loss 26.6977, time 230.1 sec, prediction_loss 18.4259, balance_loss 8.2718
+step 1, mae: 14.0195, rmse: 23.5346, mape: 0.1082
+step 2, mae: 15.9027, rmse: 26.9179, mape: 0.1327
+step 3, mae: 16.9133, rmse: 28.7452, mape: 0.1467
+step 4, mae: 17.7421, rmse: 30.0332, mape: 0.1598
+step 5, mae: 18.5106, rmse: 31.1653, mape: 0.1745
+step 6, mae: 19.2209, rmse: 32.1802, mape: 0.1873
+step 7, mae: 19.7902, rmse: 33.1220, mape: 0.1937
+step 8, mae: 20.2997, rmse: 33.8626, mape: 0.2057
+step 9, mae: 20.7783, rmse: 34.5761, mape: 0.2193
+step 10, mae: 21.0070, rmse: 35.2356, mape: 0.2120
+step 11, mae: 21.4483, rmse: 35.8911, mape: 0.2210
+step 12, mae: 21.8412, rmse: 36.5555, mape: 0.2243
+average, mae: 18.9561, rmse: 32.0400, mape: 0.1821, val_time: 30.1871
+epoch 30, lr 0.001000, total_loss 26.3645, time 228.7 sec, prediction_loss 18.3561, balance_loss 8.0084
+step 1, mae: 13.9615, rmse: 23.6809, mape: 0.1033
+step 2, mae: 15.6138, rmse: 26.9343, mape: 0.1213
+step 3, mae: 16.7245, rmse: 28.7708, mape: 0.1391
+step 4, mae: 17.5019, rmse: 30.1549, mape: 0.1457
+step 5, mae: 18.0649, rmse: 31.0444, mape: 0.1563
+step 6, mae: 18.6580, rmse: 32.0269, mape: 0.1641
+step 7, mae: 19.1488, rmse: 32.7305, mape: 0.1712
+step 8, mae: 19.4662, rmse: 33.2404, mape: 0.1768
+step 9, mae: 19.9849, rmse: 34.1160, mape: 0.1797
+step 10, mae: 20.2935, rmse: 34.5991, mape: 0.1849
+step 11, mae: 20.6507, rmse: 35.1593, mape: 0.1897
+step 12, mae: 21.1684, rmse: 35.8303, mape: 0.1963
+average, mae: 18.4363, rmse: 31.7148, mape: 0.1607, val_time: 31.2089
+epoch 31, lr 0.001000, total_loss 26.3576, time 229.5 sec, prediction_loss 18.3179, balance_loss 8.0397
+step 1, mae: 13.7825, rmse: 23.4780, mape: 0.1010
+step 2, mae: 15.5724, rmse: 26.7574, mape: 0.1236
+step 3, mae: 16.5482, rmse: 28.6185, mape: 0.1297
+step 4, mae: 17.4320, rmse: 29.9931, mape: 0.1379
+step 5, mae: 18.0819, rmse: 30.9218, mape: 0.1471
+step 6, mae: 18.7149, rmse: 31.7307, mape: 0.1566
+step 7, mae: 19.2374, rmse: 32.6045, mape: 0.1651
+step 8, mae: 19.7344, rmse: 33.4047, mape: 0.1718
+step 9, mae: 20.4420, rmse: 34.2600, mape: 0.1848
+step 10, mae: 20.5748, rmse: 34.7321, mape: 0.1881
+step 11, mae: 21.0740, rmse: 35.5910, mape: 0.1963
+step 12, mae: 21.4646, rmse: 36.2634, mape: 0.2019
+average, mae: 18.5548, rmse: 31.7405, mape: 0.1587, val_time: 30.7642
+epoch 32, lr 0.001000, total_loss 25.8202, time 227.8 sec, prediction_loss 18.1633, balance_loss 7.6569
+step 1, mae: 13.9807, rmse: 23.4643, mape: 0.1136
+step 2, mae: 15.5925, rmse: 26.8373, mape: 0.1213
+step 3, mae: 16.6841, rmse: 28.7181, mape: 0.1339
+step 4, mae: 17.5258, rmse: 29.9430, mape: 0.1487
+step 5, mae: 18.2783, rmse: 30.9610, mape: 0.1606
+step 6, mae: 18.8003, rmse: 31.7784, mape: 0.1701
+step 7, mae: 19.1167, rmse: 32.4891, mape: 0.1690
+step 8, mae: 19.4875, rmse: 33.0623, mape: 0.1782
+step 9, mae: 19.8622, rmse: 33.6604, mape: 0.1785
+step 10, mae: 20.3816, rmse: 34.2951, mape: 0.1830
+step 11, mae: 20.8214, rmse: 34.8426, mape: 0.1891
+step 12, mae: 21.2426, rmse: 35.4599, mape: 0.1956
+average, mae: 18.4809, rmse: 31.4772, mape: 0.1618, val_time: 30.9150
+epoch 33, lr 0.001000, total_loss 25.7753, time 228.4 sec, prediction_loss 18.1121, balance_loss 7.6632
+step 1, mae: 13.9388, rmse: 23.5375, mape: 0.1084
+step 2, mae: 15.6983, rmse: 26.8610, mape: 0.1291
+step 3, mae: 16.8710, rmse: 28.7000, mape: 0.1526
+step 4, mae: 17.7372, rmse: 30.1703, mape: 0.1577
+step 5, mae: 18.3822, rmse: 31.2020, mape: 0.1645
+step 6, mae: 18.8392, rmse: 32.1885, mape: 0.1599
+step 7, mae: 19.3303, rmse: 32.9525, mape: 0.1682
+step 8, mae: 19.8044, rmse: 33.7504, mape: 0.1758
+step 9, mae: 20.1950, rmse: 34.2771, mape: 0.1906
+step 10, mae: 20.5696, rmse: 34.8391, mape: 0.1965
+step 11, mae: 20.9511, rmse: 35.4386, mape: 0.2005
+step 12, mae: 21.5278, rmse: 36.2635, mape: 0.2048
+average, mae: 18.6536, rmse: 31.8899, mape: 0.1674, val_time: 30.7680
+epoch 34, lr 0.001000, total_loss 25.3813, time 226.2 sec, prediction_loss 18.0421, balance_loss 7.3392
+step 1, mae: 13.9038, rmse: 23.4211, mape: 0.1146
+step 2, mae: 15.6055, rmse: 26.6976, mape: 0.1343
+step 3, mae: 16.6321, rmse: 28.5619, mape: 0.1476
+step 4, mae: 17.2962, rmse: 29.8845, mape: 0.1463
+step 5, mae: 18.1603, rmse: 30.8987, mape: 0.1669
+step 6, mae: 19.0273, rmse: 31.8819, mape: 0.1934
+step 7, mae: 19.4452, rmse: 32.6810, mape: 0.1949
+step 8, mae: 20.0581, rmse: 33.5753, mape: 0.2054
+step 9, mae: 20.3144, rmse: 34.0173, mape: 0.2067
+step 10, mae: 20.7584, rmse: 34.8041, mape: 0.2115
+step 11, mae: 21.0164, rmse: 35.3125, mape: 0.2133
+step 12, mae: 21.3812, rmse: 36.0418, mape: 0.2100
+average, mae: 18.6331, rmse: 31.6901, mape: 0.1787, val_time: 29.1838
+epoch 35, lr 0.001000, total_loss 25.2056, time 226.2 sec, prediction_loss 17.9264, balance_loss 7.2792
+step 1, mae: 13.7877, rmse: 23.4497, mape: 0.1034
+step 2, mae: 15.3255, rmse: 26.6052, mape: 0.1162
+step 3, mae: 16.2998, rmse: 28.2833, mape: 0.1271
+step 4, mae: 17.0916, rmse: 29.5331, mape: 0.1421
+step 5, mae: 17.7183, rmse: 30.5854, mape: 0.1475
+step 6, mae: 18.4417, rmse: 31.5950, mape: 0.1644
+step 7, mae: 18.8753, rmse: 32.3872, mape: 0.1674
+step 8, mae: 19.2402, rmse: 32.8785, mape: 0.1814
+step 9, mae: 19.6797, rmse: 33.5039, mape: 0.1897
+step 10, mae: 20.2513, rmse: 34.1305, mape: 0.2071
+step 11, mae: 20.6029, rmse: 34.5988, mape: 0.2145
+step 12, mae: 21.1194, rmse: 35.1350, mape: 0.2268
+average, mae: 18.2027, rmse: 31.2415, mape: 0.1656, val_time: 30.9791
+epoch 36, lr 0.000500, total_loss 22.8375, time 222.3 sec, prediction_loss 17.3060, balance_loss 5.5315
+step 1, mae: 13.6088, rmse: 23.3217, mape: 0.0970
+step 2, mae: 15.2513, rmse: 26.5767, mape: 0.1143
+step 3, mae: 16.1098, rmse: 28.1446, mape: 0.1248
+step 4, mae: 16.7949, rmse: 29.3659, mape: 0.1335
+step 5, mae: 17.4019, rmse: 30.3817, mape: 0.1416
+step 6, mae: 17.8935, rmse: 31.1690, mape: 0.1492
+step 7, mae: 18.3349, rmse: 31.9121, mape: 0.1552
+step 8, mae: 18.7704, rmse: 32.6019, mape: 0.1630
+step 9, mae: 19.0880, rmse: 33.1244, mape: 0.1675
+step 10, mae: 19.5508, rmse: 33.8534, mape: 0.1732
+step 11, mae: 19.9111, rmse: 34.4015, mape: 0.1791
+step 12, mae: 20.2850, rmse: 34.9260, mape: 0.1871
+average, mae: 17.7499, rmse: 30.9933, mape: 0.1488, val_time: 29.3831
+epoch 37, lr 0.000500, total_loss 22.4479, time 221.4 sec, prediction_loss 17.1815, balance_loss 5.2664
+step 1, mae: 13.6358, rmse: 23.3693, mape: 0.0973
+step 2, mae: 15.1490, rmse: 26.4875, mape: 0.1135
+step 3, mae: 16.1127, rmse: 28.2080, mape: 0.1242
+step 4, mae: 16.8349, rmse: 29.4267, mape: 0.1332
+step 5, mae: 17.4553, rmse: 30.4194, mape: 0.1412
+step 6, mae: 17.9451, rmse: 31.3115, mape: 0.1469
+step 7, mae: 18.3698, rmse: 32.0681, mape: 0.1523
+step 8, mae: 18.7597, rmse: 32.6694, mape: 0.1576
+step 9, mae: 19.1799, rmse: 33.3823, mape: 0.1632
+step 10, mae: 19.5615, rmse: 33.9729, mape: 0.1686
+step 11, mae: 19.8229, rmse: 34.4020, mape: 0.1750
+step 12, mae: 20.2143, rmse: 34.9452, mape: 0.1827
+average, mae: 17.7533, rmse: 31.0696, mape: 0.1463, val_time: 29.2287
+epoch 38, lr 0.000500, total_loss 22.5603, time 221.8 sec, prediction_loss 17.1311, balance_loss 5.4293
+step 1, mae: 13.6347, rmse: 23.3667, mape: 0.0974
+step 2, mae: 15.1907, rmse: 26.4987, mape: 0.1161
+step 3, mae: 16.1337, rmse: 28.2355, mape: 0.1240
+step 4, mae: 16.8345, rmse: 29.5034, mape: 0.1310
+step 5, mae: 17.4444, rmse: 30.4523, mape: 0.1380
+step 6, mae: 18.0019, rmse: 31.3540, mape: 0.1465
+step 7, mae: 18.3356, rmse: 31.9337, mape: 0.1514
+step 8, mae: 18.7006, rmse: 32.6088, mape: 0.1582
+step 9, mae: 19.1119, rmse: 33.2503, mape: 0.1659
+step 10, mae: 19.5124, rmse: 33.8925, mape: 0.1721
+step 11, mae: 19.8629, rmse: 34.3886, mape: 0.1786
+step 12, mae: 20.2210, rmse: 34.9009, mape: 0.1871
+average, mae: 17.7486, rmse: 31.0433, mape: 0.1472, val_time: 29.0639
+epoch 39, lr 0.000500, total_loss 22.4399, time 221.7 sec, prediction_loss 17.0697, balance_loss 5.3701
+step 1, mae: 13.5073, rmse: 23.2328, mape: 0.0957
+step 2, mae: 15.0772, rmse: 26.3690, mape: 0.1108
+step 3, mae: 15.9969, rmse: 28.0864, mape: 0.1213
+step 4, mae: 16.6777, rmse: 29.2541, mape: 0.1293
+step 5, mae: 17.2257, rmse: 30.1768, mape: 0.1364
+step 6, mae: 17.7031, rmse: 31.0240, mape: 0.1434
+step 7, mae: 18.1247, rmse: 31.6892, mape: 0.1518
+step 8, mae: 18.4663, rmse: 32.2909, mape: 0.1574
+step 9, mae: 18.8289, rmse: 32.9168, mape: 0.1616
+step 10, mae: 19.1713, rmse: 33.4469, mape: 0.1680
+step 11, mae: 19.4491, rmse: 33.8648, mape: 0.1728
+step 12, mae: 19.8455, rmse: 34.3778, mape: 0.1763
+average, mae: 17.5060, rmse: 30.7281, mape: 0.1438, val_time: 30.9728
+epoch 40, lr 0.000500, total_loss 22.1352, time 221.0 sec, prediction_loss 17.0344, balance_loss 5.1008
+step 1, mae: 13.5392, rmse: 23.2809, mape: 0.0990
+step 2, mae: 15.3314, rmse: 26.7427, mape: 0.1162
+step 3, mae: 16.1448, rmse: 28.3687, mape: 0.1236
+step 4, mae: 16.8116, rmse: 29.5416, mape: 0.1302
+step 5, mae: 17.3110, rmse: 30.3626, mape: 0.1371
+step 6, mae: 17.9041, rmse: 31.3556, mape: 0.1442
+step 7, mae: 18.3478, rmse: 32.0995, mape: 0.1500
+step 8, mae: 18.7747, rmse: 32.8432, mape: 0.1553
+step 9, mae: 19.1399, rmse: 33.3940, mape: 0.1611
+step 10, mae: 19.4554, rmse: 33.9015, mape: 0.1660
+step 11, mae: 19.7740, rmse: 34.4206, mape: 0.1713
+step 12, mae: 20.1488, rmse: 34.9544, mape: 0.1787
+average, mae: 17.7235, rmse: 31.1178, mape: 0.1444, val_time: 29.9107
+epoch 41, lr 0.000250, total_loss 21.0682, time 219.2 sec, prediction_loss 16.7362, balance_loss 4.3321
+step 1, mae: 13.4571, rmse: 23.2008, mape: 0.0946
+step 2, mae: 15.0829, rmse: 26.4475, mape: 0.1113
+step 3, mae: 15.9404, rmse: 28.0532, mape: 0.1214
+step 4, mae: 16.6003, rmse: 29.2339, mape: 0.1277
+step 5, mae: 17.1343, rmse: 30.1288, mape: 0.1345
+step 6, mae: 17.6434, rmse: 30.9493, mape: 0.1414
+step 7, mae: 18.0770, rmse: 31.6968, mape: 0.1474
+step 8, mae: 18.4820, rmse: 32.3803, mape: 0.1539
+step 9, mae: 18.8718, rmse: 33.0481, mape: 0.1572
+step 10, mae: 19.2683, rmse: 33.6884, mape: 0.1627
+step 11, mae: 19.5890, rmse: 34.1440, mape: 0.1706
+step 12, mae: 20.0339, rmse: 34.7296, mape: 0.1833
+average, mae: 17.5149, rmse: 30.8182, mape: 0.1422, val_time: 29.4608
+epoch 42, lr 0.000250, total_loss 20.9207, time 218.9 sec, prediction_loss 16.6703, balance_loss 4.2504
+step 1, mae: 13.5182, rmse: 23.1817, mape: 0.1006
+step 2, mae: 15.0275, rmse: 26.2890, mape: 0.1151
+step 3, mae: 15.9566, rmse: 27.9863, mape: 0.1253
+step 4, mae: 16.5583, rmse: 29.0613, mape: 0.1305
+step 5, mae: 17.1108, rmse: 30.0489, mape: 0.1352
+step 6, mae: 17.5921, rmse: 30.9298, mape: 0.1408
+step 7, mae: 18.0131, rmse: 31.6563, mape: 0.1466
+step 8, mae: 18.3511, rmse: 32.2396, mape: 0.1521
+step 9, mae: 18.7586, rmse: 32.9756, mape: 0.1567
+step 10, mae: 19.0636, rmse: 33.4918, mape: 0.1604
+step 11, mae: 19.3699, rmse: 33.9729, mape: 0.1679
+step 12, mae: 19.7474, rmse: 34.5303, mape: 0.1746
+average, mae: 17.4222, rmse: 30.7042, mape: 0.1422, val_time: 30.0920
+epoch 43, lr 0.000250, total_loss 20.9034, time 219.0 sec, prediction_loss 16.6395, balance_loss 4.2639
+step 1, mae: 13.4756, rmse: 23.1742, mape: 0.0948
+step 2, mae: 15.0452, rmse: 26.3162, mape: 0.1099
+step 3, mae: 15.9551, rmse: 28.0059, mape: 0.1193
+step 4, mae: 16.5990, rmse: 29.1074, mape: 0.1263
+step 5, mae: 17.2196, rmse: 30.0866, mape: 0.1352
+step 6, mae: 17.6949, rmse: 30.8848, mape: 0.1412
+step 7, mae: 18.0651, rmse: 31.6008, mape: 0.1446
+step 8, mae: 18.4174, rmse: 32.2284, mape: 0.1493
+step 9, mae: 18.7974, rmse: 32.9149, mape: 0.1541
+step 10, mae: 19.1236, rmse: 33.4825, mape: 0.1593
+step 11, mae: 19.4132, rmse: 33.9607, mape: 0.1645
+step 12, mae: 19.7688, rmse: 34.4535, mape: 0.1710
+average, mae: 17.4645, rmse: 30.6897, mape: 0.1391, val_time: 28.7815
+epoch 44, lr 0.000250, total_loss 20.8165, time 219.2 sec, prediction_loss 16.6131, balance_loss 4.2034
+step 1, mae: 13.4133, rmse: 23.1070, mape: 0.0978
+step 2, mae: 14.9234, rmse: 26.2117, mape: 0.1129
+step 3, mae: 15.8787, rmse: 27.9911, mape: 0.1221
+step 4, mae: 16.4868, rmse: 29.1071, mape: 0.1276
+step 5, mae: 17.0672, rmse: 30.0623, mape: 0.1334
+step 6, mae: 17.5202, rmse: 30.8504, mape: 0.1390
+step 7, mae: 17.9268, rmse: 31.5352, mape: 0.1457
+step 8, mae: 18.2641, rmse: 32.1226, mape: 0.1495
+step 9, mae: 18.6557, rmse: 32.8166, mape: 0.1540
+step 10, mae: 18.9720, rmse: 33.3207, mape: 0.1595
+step 11, mae: 19.3398, rmse: 33.9196, mape: 0.1659
+step 12, mae: 19.7847, rmse: 34.5564, mape: 0.1718
+average, mae: 17.3526, rmse: 30.6395, mape: 0.1399, val_time: 29.1466
+epoch 45, lr 0.000250, total_loss 20.7614, time 219.3 sec, prediction_loss 16.5811, balance_loss 4.1802
+step 1, mae: 13.4543, rmse: 23.1117, mape: 0.0938
+step 2, mae: 14.9929, rmse: 26.2292, mape: 0.1091
+step 3, mae: 15.9270, rmse: 27.9321, mape: 0.1202
+step 4, mae: 16.5578, rmse: 29.0606, mape: 0.1256
+step 5, mae: 17.1308, rmse: 30.0354, mape: 0.1328
+step 6, mae: 17.5779, rmse: 30.8595, mape: 0.1384
+step 7, mae: 18.0095, rmse: 31.6157, mape: 0.1442
+step 8, mae: 18.3550, rmse: 32.2252, mape: 0.1499
+step 9, mae: 18.7614, rmse: 32.9265, mape: 0.1568
+step 10, mae: 19.0979, rmse: 33.5116, mape: 0.1614
+step 11, mae: 19.3783, rmse: 33.9737, mape: 0.1667
+step 12, mae: 19.7069, rmse: 34.4184, mape: 0.1733
+average, mae: 17.4124, rmse: 30.6666, mape: 0.1394, val_time: 28.6884
+epoch 46, lr 0.000250, total_loss 20.6026, time 219.0 sec, prediction_loss 16.5567, balance_loss 4.0460
+step 1, mae: 13.5007, rmse: 23.1756, mape: 0.0990
+step 2, mae: 14.9662, rmse: 26.2667, mape: 0.1119
+step 3, mae: 15.8514, rmse: 27.9616, mape: 0.1210
+step 4, mae: 16.4834, rmse: 29.0793, mape: 0.1270
+step 5, mae: 17.0711, rmse: 30.0879, mape: 0.1339
+step 6, mae: 17.5774, rmse: 30.9914, mape: 0.1396
+step 7, mae: 18.0433, rmse: 31.7858, mape: 0.1456
+step 8, mae: 18.4033, rmse: 32.4033, mape: 0.1504
+step 9, mae: 18.7655, rmse: 33.0188, mape: 0.1553
+step 10, mae: 19.1102, rmse: 33.5560, mape: 0.1616
+step 11, mae: 19.3430, rmse: 33.9193, mape: 0.1665
+step 12, mae: 19.7280, rmse: 34.4510, mape: 0.1735
+average, mae: 17.4036, rmse: 30.7329, mape: 0.1404, val_time: 29.6711
+epoch 47, lr 0.000250, total_loss 20.5120, time 218.6 sec, prediction_loss 16.5283, balance_loss 3.9836
+step 1, mae: 13.4059, rmse: 23.1543, mape: 0.0943
+step 2, mae: 14.9629, rmse: 26.2853, mape: 0.1096
+step 3, mae: 15.8438, rmse: 27.9725, mape: 0.1189
+step 4, mae: 16.5101, rmse: 29.1250, mape: 0.1262
+step 5, mae: 17.1389, rmse: 30.1578, mape: 0.1350
+step 6, mae: 17.6733, rmse: 31.0717, mape: 0.1416
+step 7, mae: 18.1576, rmse: 31.8939, mape: 0.1476
+step 8, mae: 18.5087, rmse: 32.5417, mape: 0.1517
+step 9, mae: 18.8145, rmse: 33.1163, mape: 0.1546
+step 10, mae: 19.0395, rmse: 33.5422, mape: 0.1593
+step 11, mae: 19.3775, rmse: 33.9671, mape: 0.1647
+step 12, mae: 19.7881, rmse: 34.5611, mape: 0.1709
+average, mae: 17.4350, rmse: 30.7935, mape: 0.1395, val_time: 29.7749
+epoch 48, lr 0.000250, total_loss 20.6765, time 219.3 sec, prediction_loss 16.5035, balance_loss 4.1730
+step 1, mae: 13.3862, rmse: 23.0713, mape: 0.0931
+step 2, mae: 14.9186, rmse: 26.1364, mape: 0.1083
+step 3, mae: 15.8326, rmse: 27.8468, mape: 0.1182
+step 4, mae: 16.4710, rmse: 28.9561, mape: 0.1251
+step 5, mae: 17.0454, rmse: 29.9240, mape: 0.1301
+step 6, mae: 17.4907, rmse: 30.7158, mape: 0.1370
+step 7, mae: 17.9043, rmse: 31.4536, mape: 0.1418
+step 8, mae: 18.2809, rmse: 32.1352, mape: 0.1465
+step 9, mae: 18.6388, rmse: 32.7698, mape: 0.1503
+step 10, mae: 18.9194, rmse: 33.2285, mape: 0.1552
+step 11, mae: 19.2802, rmse: 33.7822, mape: 0.1600
+step 12, mae: 19.6502, rmse: 34.2684, mape: 0.1684
+average, mae: 17.3181, rmse: 30.5282, mape: 0.1362, val_time: 30.1415
+epoch 49, lr 0.000250, total_loss 20.6190, time 219.3 sec, prediction_loss 16.4888, balance_loss 4.1301
+step 1, mae: 13.4077, rmse: 23.1130, mape: 0.0951
+step 2, mae: 14.9601, rmse: 26.3063, mape: 0.1089
+step 3, mae: 15.9163, rmse: 28.0911, mape: 0.1184
+step 4, mae: 16.6609, rmse: 29.3835, mape: 0.1264
+step 5, mae: 17.1877, rmse: 30.2776, mape: 0.1337
+step 6, mae: 17.6930, rmse: 31.1368, mape: 0.1395
+step 7, mae: 18.0866, rmse: 31.8320, mape: 0.1447
+step 8, mae: 18.4635, rmse: 32.5026, mape: 0.1495
+step 9, mae: 18.7816, rmse: 33.0530, mape: 0.1535
+step 10, mae: 19.1460, rmse: 33.6708, mape: 0.1581
+step 11, mae: 19.4056, rmse: 34.0952, mape: 0.1634
+step 12, mae: 19.7588, rmse: 34.5949, mape: 0.1696
+average, mae: 17.4556, rmse: 30.8493, mape: 0.1384, val_time: 29.2782
+epoch 50, lr 0.000250, total_loss 20.5033, time 219.1 sec, prediction_loss 16.4626, balance_loss 4.0407
+step 1, mae: 13.3955, rmse: 23.1357, mape: 0.0937
+step 2, mae: 14.9472, rmse: 26.2718, mape: 0.1097
+step 3, mae: 15.8964, rmse: 28.0604, mape: 0.1188
+step 4, mae: 16.5148, rmse: 29.1376, mape: 0.1266
+step 5, mae: 17.0583, rmse: 30.0453, mape: 0.1325
+step 6, mae: 17.4961, rmse: 30.7958, mape: 0.1379
+step 7, mae: 17.9738, rmse: 31.6425, mape: 0.1443
+step 8, mae: 18.3380, rmse: 32.3007, mape: 0.1486
+step 9, mae: 18.7525, rmse: 32.9931, mape: 0.1528
+step 10, mae: 19.0524, rmse: 33.5018, mape: 0.1570
+step 11, mae: 19.3610, rmse: 34.0194, mape: 0.1619
+step 12, mae: 19.6678, rmse: 34.4906, mape: 0.1688
+average, mae: 17.3710, rmse: 30.7074, mape: 0.1377, val_time: 28.9823
+Best epoch is: 48
+======================TEST MODE======================
+step 1, mae: 13.2297, rmse: 22.2686, mape: 0.0923
+step 2, mae: 15.1183, rmse: 25.7484, mape: 0.1082
+step 3, mae: 16.4572, rmse: 27.9293, mape: 0.1196
+step 4, mae: 17.4950, rmse: 29.4729, mape: 0.1288
+step 5, mae: 18.4685, rmse: 30.9127, mape: 0.1361
+step 6, mae: 19.3028, rmse: 32.1764, mape: 0.1454
+step 7, mae: 20.0371, rmse: 33.3072, mape: 0.1522
+step 8, mae: 20.7131, rmse: 34.3793, mape: 0.1585
+step 9, mae: 21.3449, rmse: 35.3844, mape: 0.1640
+step 10, mae: 21.8477, rmse: 36.1679, mape: 0.1708
+step 11, mae: 22.3982, rmse: 37.0294, mape: 0.1765
+step 12, mae: 22.9229, rmse: 37.7827, mape: 0.1862
+average, mae: 19.1114, rmse: 32.2088, mape: 0.1449
