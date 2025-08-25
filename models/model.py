@@ -53,13 +53,13 @@ class AttentionLayer(nn.Module):
     def __init__(self, model_dim, num_heads, mlp_ratio=2, dropout=0.1):
         super().__init__()
 
-        # Intro-patch attention
-        self.iro_norm1 = nn.LayerNorm(model_dim)
-        self.iro_norm2 = nn.LayerNorm(model_dim)
-        self.iro_drop1 = nn.Dropout(dropout)
-        self.iro_drop2 = nn.Dropout(dropout)
-        self.iro_attn = MultiHeadAttention(model_dim, num_heads, dropout=dropout)
-        self.iro_mlp = nn.Sequential(
+        # Intra-patch attention
+        self.ira_norm1 = nn.LayerNorm(model_dim)
+        self.ira_norm2 = nn.LayerNorm(model_dim)
+        self.ira_drop1 = nn.Dropout(dropout)
+        self.ira_drop2 = nn.Dropout(dropout)
+        self.ira_attn = MultiHeadAttention(model_dim, num_heads, dropout=dropout)
+        self.ira_mlp = nn.Sequential(
             nn.Linear(model_dim, mlp_ratio * model_dim),
             nn.GELU(),
             nn.Dropout(dropout),
@@ -82,11 +82,11 @@ class AttentionLayer(nn.Module):
     def forward(self, x, mask):
         B, T, R, P, D = x.shape
 
-        # Intro-patch attention
+        # Intra-patch attention
         mask_ = mask.view(B * T * R, P) == 0
-        x_ = self.iro_norm1(x.reshape(B * T * R, P, D))
-        x = x + self.iro_drop1(self.iro_attn(x_, x_, x_, mask=mask_)).reshape(B, T, R, P, D)
-        x = x + self.iro_drop2(self.iro_mlp(self.iro_norm2(x)))
+        x_ = self.ira_norm1(x.reshape(B * T * R, P, D))
+        x = x + self.ira_drop1(self.ira_attn(x_, x_, x_, mask=mask_)).reshape(B, T, R, P, D)
+        x = x + self.ira_drop2(self.ira_mlp(self.ira_norm2(x)))
 
         # Inter-patch attention
         mask_ = mask.transpose(2, 3).contiguous().view(B * T * P, R) == 0
