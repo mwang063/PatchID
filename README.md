@@ -17,6 +17,11 @@ The datasets are available at https://drive.google.com/drive/folders/1nsgMDU_-0B
 You can also download from https://github.com/LMissher/PatchSTG
 
 
+## Model Weights
+The model weights are available at https://drive.google.com/drive/folders/1MQAHKkpgvqMs1uBsiqfn4oTnOOAwfzmc?usp=sharing \
+The steps to use them: 1) Change all variable names 'ira_xxx' to 'iro_xxx' in the 'AttentionLayer' class of 'model.py' file. This is because that we have modified these variable names after training the model.  2) Delete the line 257 of 'main.py' file.
+
+
 ## Usage
 Download datasets and put them in the `./data` folder. Create an empty `./cpt` folder. \
 Then, you can train the model as follows. Taken SD dataset for example.
